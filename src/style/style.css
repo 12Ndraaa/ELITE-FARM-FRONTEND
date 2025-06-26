@@ -1,0 +1,456 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+/* --- Base Styles and Variables --- */
+:root {
+    /* Define base font size for rem units */
+    font-size: 16px;
+
+    /* Define colors */
+    --primary-color: #3a7bd5;
+    --secondary-color: #00d2ff;
+    --dark-color: #2c3e50;
+    --light-color: #f8f9fa;
+    --green-farm: #689F38; /* A specific green for farm elements */
+    --green-dark-farm: #558B2F; /* Darker green for hover effects */
+}
+
+body {
+    background-color: #f0f2f5;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* --- Navbar Styles --- */
+.navbar {
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    background: white !important;
+    padding: 15px 0;
+    transition: all 0.3s ease;
+}
+
+.navbar.scrolled {
+    padding: 5px 0;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color)) !important;
+}
+
+.navbar.scrolled .nav-link,
+.navbar.scrolled .navbar-brand {
+    color: white !important;
+}
+
+.navbar.scrolled .form-control {
+    background-color: rgba(255, 255, 255, 0.9);
+}
+
+.navbar.scrolled .search-btn {
+    background-color: white;
+    color: var(--primary-color);
+}
+
+.navbar-brand {
+    font-weight: 700;
+    color: var(--primary-color) !important;
+    font-size: 1.7rem;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+}
+
+.navbar-brand span {
+    color: var(--secondary-color);
+}
+
+.navbar-brand:hover {
+    transform: scale(1.05);
+}
+
+.nav-link {
+    color: var(--dark-color) !important;
+    font-weight: 500;
+    margin: 0 8px;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.nav-link:hover {
+    transform: translateY(-3px);
+}
+
+.nav-link:before {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+    transition: all 0.3s ease;
+}
+
+.nav-link:hover:before {
+    width: 100%;
+}
+
+.search-form {
+    position: relative;
+    display: flex;
+    margin: 0 15px;
+    width: 100%;
+    max-width: 500px; /* Max width for desktop search bar */
+}
+
+.form-control {
+    border-radius: 50px !important;
+    border: none;
+    background-color: #f1f3f5 !important;
+    padding-left: 25px;
+    transition: all 0.3s ease;
+    width: 100%;
+}
+
+.form-control:focus {
+    box-shadow: 0 0 0 0.2rem rgba(58, 123, 213, 0.25);
+}
+
+.search-btn {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: white;
+    border: none;
+    border-radius: 50px;
+    padding: 0 20px;
+    margin-left: -45px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.search-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 5px 15px rgba(0, 210, 255, 0.4);
+}
+
+.cart-icon {
+    position: relative;
+    color: var(--dark-color);
+    font-size: 1.4rem;
+    margin-left: 15px;
+    transition: all 0.3s ease;
+}
+
+.cart-icon:hover {
+    color: var(--primary-color);
+    transform: scale(1.1);
+}
+
+.cart-count {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    background-color: #ff4757;
+    color: white;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.7rem;
+    font-weight: bold;
+}
+
+/* Navbar Toggle Animation */
+.navbar-toggler {
+    border: none;
+    padding: 0.5rem 0.7rem;
+    transition: all 0.3s ease;
+}
+
+.navbar-toggler:focus {
+    outline: none;
+}
+
+.navbar-toggler-icon {
+    background-image: none;
+    position: relative;
+    height: 2px;
+    width: 22px;
+    background-color: var(--primary-color);
+    transition: all 0.3s ease;
+}
+
+.navbar-toggler-icon:before,
+.navbar-toggler-icon:after {
+    content: '';
+    position: absolute;
+    height: 2px;
+    width: 22px;
+    background-color: var(--primary-color);
+    transition: all 0.3s ease;
+}
+
+.navbar-toggler-icon:before {
+    transform: translateY(-6px);
+}
+
+.navbar-toggler-icon:after {
+    transform: translateY(6px);
+}
+
+.navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
+    background-color: transparent;
+}
+
+.navbar-toggler[aria-expanded="true"] .navbar-toggler-icon:before {
+    transform: rotate(45deg);
+    background-color: white;
+}
+
+.navbar-toggler[aria-expanded="true"] .navbar-toggler-icon:after {
+    transform: rotate(-45deg);
+    background-color: white;
+}
+
+.navbar.scrolled .navbar-toggler-icon,
+.navbar.scrolled .navbar-toggler-icon:before,
+.navbar.scrolled .navbar-toggler-icon:after {
+    background-color: white;
+}
+
+/* --- Product Card Styles --- */
+.product-card {
+    background-color: #ffffff;
+    border-radius: 20px;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    max-width: 350px;
+    width: 90%;
+    padding: 1.5rem;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
+    position: relative;
+    transition: all 0.3s ease-in-out;
+    margin-bottom: 2rem; /* Added space between cards in a column */
+}
+
+.product-image-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 12.5rem;
+    margin-top: 1rem; /* Sesuaikan jika tidak ada header */
+}
+
+.product-image {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    transform: rotate(-10deg); /* Rotasi sedikit dikurangi agar lebih umum untuk sayuran */
+    filter: drop-shadow(5px 15px 10px rgba(0, 0, 0, 0.2));
+}
+
+.product-details {
+    text-align: center;
+    width: 100%;
+    margin-top: 1.8rem;
+}
+
+.product-title {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 0.8rem;
+}
+
+.product-description {
+    font-size: 0.85rem;
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 1.2rem;
+    padding: 0 0.5rem;
+}
+
+.product-colors {
+    display: flex;
+    justify-content: center;
+    gap: 0.6rem;
+    margin-bottom: 1.5rem;
+}
+
+.color-option {
+    width: 1.4rem;
+    height: 1.4rem;
+    border-radius: 50%;
+    cursor: pointer;
+    border: 2px solid transparent;
+    transition: all 0.3s ease;
+}
+
+.color-option.green {
+    background-color: #4CAF50;
+}
+
+.color-option.maroon {
+    background-color: #800000; /* Bisa diartikan sebagai varietas tertentu atau kualitas */
+}
+
+.color-option.light-teal {
+    background-color: #00ADB5; /* Bisa diartikan sebagai varietas tertentu atau kualitas */
+}
+
+.color-option.active {
+    border-color: #333;
+    box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.1);
+}
+
+.product-price {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 1.5rem;
+}
+
+.add-to-cart-btn {
+    background-color: var(--green-farm);
+    color: #ffffff;
+    padding: 0.8rem 2rem;
+    border: none;
+    border-radius: 50px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 8px 15px rgba(104, 159, 56, 0.2);
+}
+
+.add-to-cart-btn:hover {
+    background-color: var(--green-dark-farm);
+    transform: translateY(-2px);
+}
+
+.add-to-cart-btn:active {
+    transform: translateY(0);
+    box-shadow: 0 5px 10px rgba(104, 159, 56, 0.2);
+}
+
+/* --- Animations --- */
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translate3d(0, -20px, 0);
+    }
+    to {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+.fadeInDown {
+    animation-name: fadeInDown;
+    animation-duration: 0.5s;
+}
+
+/* --- Responsive Design (Media Queries) --- */
+@media (max-width: 1199px) {
+    .search-form {
+        max-width: 1000px; /* Adjusted max-width for larger tablets/laptops */
+    }
+}
+
+@media (max-width: 991px) { /* Medium devices (tablets) */
+    .search-form {
+        margin: 15px 0;
+        max-width: 100%; /* Full width for search bar on smaller screens */
+    }
+    
+    .form-control {
+        padding-left: 20px;
+    }
+    
+    .search-btn {
+        padding: 0 15px;
+        margin-left: -40px;
+    }
+    
+    .navbar-collapse {
+        background: white;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    }
+    
+    .navbar.scrolled .navbar-collapse {
+        background: rgba(255, 255, 255, 0.95);
+    }
+
+    .product-card {
+        padding: 1rem;
+    }
+}
+
+@media (max-width: 767px) { /* Small devices (phones) */
+    .search-form {
+        margin: 10px 0 15px;
+    }
+    
+    .form-control {
+        padding-left: 15px;
+        font-size: 0.9rem;
+    }
+    
+    .search-btn {
+        padding: 0 12px;
+    }
+
+    .product-image-container {
+        height: 10rem;
+        margin-top: 0.5rem;
+    }
+
+    .product-title {
+        font-size: 1.4rem;
+    }
+
+    .product-description {
+        font-size: 0.8rem;
+    }
+
+    .product-price {
+        font-size: 1.6rem;
+    }
+
+    .add-to-cart-btn {
+        padding: 0.7rem 1.8rem;
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 320px) { /* Extra small devices */
+    .product-card {
+        padding: 0.8rem;
+    }
+
+    .product-image-container {
+        height: 8rem;
+    }
+
+    .product-title {
+        font-size: 1.2rem;
+    }
+
+    .product-description {
+        font-size: 0.75rem;
+    }
+
+    .product-price {
+        font-size: 1.4rem;
+    }
+
+    .add-to-cart-btn {
+        padding: 0.6rem 1.5rem;
+        font-size: 0.85rem;
+    }
+}
