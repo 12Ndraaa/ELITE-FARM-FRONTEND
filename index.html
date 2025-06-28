@@ -4,440 +4,70 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Smart Farm - Solusi Pertanian Cerdas</title>
+    <!-- BOOTSTRAP CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
-    <style>
-        /* Styling dari navbar sebelumnya */
-        .navbar {
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            background: white !important;
-            padding: 15px 0;
-            transition: all 0.3s ease;
-        }
-        
-        .navbar.scrolled {
-            padding: 5px 0;
-            background: linear-gradient(135deg, #28a745, #ffc107) !important; 
-        }
-        
-        .navbar.scrolled .nav-link,
-        .navbar.scrolled .navbar-brand {
-            color: white !important;
-        }
-        
-        .navbar.scrolled .form-control {
-            background-color: rgba(255, 255, 255, 0.9);
-        }
-        
-        .navbar.scrolled .search-btn {
-            background-color: white;
-            color: #28a745; 
-        }
-        
-        .navbar-brand {
-            font-weight: 700;
-            color: #28a745 !important; 
-            font-size: 1.7rem;
-            transition: all 0.3s ease;
-            display: flex;
-            align-items: center;
-            font-family: 'Poppins', sans-serif; 
-        }
-        
-        .navbar-brand span {
-            color: #ffc107; 
-        }
-        
-        .navbar-brand:hover {
-            transform: scale(1.05);
-        }
-        
-        .nav-link {
-            color: #2c3e50 !important; 
-            font-weight: 500;
-            margin: 0 8px;
-            position: relative;
-            transition: all 0.3s ease;
-            font-family: 'Poppins', sans-serif; 
-        }
-        
-        .nav-link:hover {
-            transform: translateY(-3px);
-        }
-        
-        .nav-link:before {
-            content: '';
-            position: absolute;
-            bottom: -2px;
-            left: 0;
-            width: 0;
-            height: 3px;
-            background: linear-gradient(90deg, #28a745, #ffc107); 
-            transition: all 0.3s ease;
-        }
-        
-        .nav-link:hover:before {
-            width: 100%;
-        }
-        
-        .search-form {
-            position: relative;
-            display: flex;
-            margin: 0 15px;
-        }
-        
-        .form-control {
-            border-radius: 50px !important;
-            border: none;
-            background-color: #f1f3f5 !important;
-            padding-left: 25px;
-            transition: all 0.3s ease;
-            width: 200px;
-        }
-        
-        .form-control:focus {
-            box-shadow: 0 0 0 0.2rem rgba(40, 167, 69, 0.25); 
-            width: 250px;
-        }
-        
-        .search-btn {
-            background: linear-gradient(135deg, #28a745, #ffc107); 
-            color: white;
-            border: none;
-            border-radius: 50px;
-            padding: 0 20px;
-            margin-left: -45px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-        
-        .search-btn:hover {
-            transform: scale(1.05);
-            box-shadow: 0 5px 15px rgba(255, 193, 7, 0.4); 
-        }
-        
-        .cart-icon {
-            position: relative;
-            color: #2c3e50;
-            font-size: 1.4rem;
-            margin-left: 15px;
-            transition: all 0.3s ease;
-        }
-        
-        .cart-icon:hover {
-            color: #28a745;
-            transform: scale(1.1);
-        }
-        
-        .cart-count {
-            position: absolute;
-            top: -10px;
-            right: -10px;
-            background-color: #ff4757;
-            color: white;
-            border-radius: 50%;
-            width: 20px;
-            height: 20px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-size: 0.7rem;
-            font-weight: bold;
-        }
-        
-        .navbar-toggler {
-            border: none;
-            padding: 0.5rem 0.7rem;
-            transition: all 0.3s ease;
-        }
-        
-        .navbar-toggler:focus {
-            outline: none;
-            box-shadow: none; 
-        }
-        
-        .navbar-toggler-icon {
-            background-image: none;
-            position: relative;
-            height: 2px;
-            width: 22px;
-            background-color: #28a745; 
-            transition: all 0.3s ease;
-        }
-        
-        .navbar-toggler-icon:before,
-        .navbar-toggler-icon:after {
-            content: '';
-            position: absolute;
-            height: 2px;
-            width: 22px;
-            background-color: #28a745; 
-            transition: all 0.3s ease;
-        }
-        
-        .navbar-toggler-icon:before {
-            transform: translateY(-6px);
-        }
-        
-        .navbar-toggler-icon:after {
-            transform: translateY(6px);
-        }
-        
-        .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
-            background-color: transparent;
-        }
-        
-        .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon:before {
-            transform: rotate(45deg);
-            background-color: white;
-        }
-        
-        .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon:after {
-            transform: rotate(-45deg);
-            background-color: white;
-        }
-        
-        .navbar.scrolled .navbar-toggler-icon,
-        .navbar.scrolled .navbar-toggler-icon:before,
-        .navbar.scrolled .navbar-toggler-icon:after {
-            background-color: white;
-        }
-        
-        @media (max-width: 991px) {
-            .search-form {
-                margin: 10px 0;
-            }
-            
-            .form-control {
-                width: 100% !important; 
-            }
-
-            .form-control:focus {
-                width: 100%;
-            }
-
-            .search-btn {
-                margin-left: 0; 
-                width: 100%; 
-                margin-top: 10px;
-            }
-            
-            .navbar-collapse {
-                background: white;
-                padding: 20px;
-                border-radius: 10px;
-                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            }
-            
-            .navbar.scrolled .navbar-collapse {
-                background: rgba(255, 255, 255, 0.95);
-            }
-
-            .cart-icon {
-                margin-left: 0;
-                margin-top: 15px;
-                display: inline-block; 
-            }
-        }
-        
-        @keyframes fadeInDown {
-            from {
-                opacity: 0;
-                transform: translate3d(0, -20px, 0);
-            }
-            to {
-                opacity: 1;
-                transform: translate3d(0, 0, 0);
-            }
-        }
-        
-        .fadeInDown {
-            animation-name: fadeInDown;
-            animation-duration: 0.5s;
-        }
-
-        /* Styling dari halaman utama Anda */
-        :root {
-            --bs-primary: #28a745; /* Hijau untuk tema pertanian */
-            --bs-secondary: #6c757d;
-            --bs-info: #17a2b8;
-            --bs-warning: #ffc107;
-            --bs-danger: #dc3545;
-            --bs-orange: #fd7e14;
-            --bs-light-green: #e6ffe6; /* Hijau sangat muda untuk background */
-        }
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: var(--bs-light-green); /* Latar belakang hijau muda */
-            color: #333;
-            padding-top: 90px; /* Menambahkan padding agar konten tidak tertutup navbar fixed-top */
-        }
-        /* .navbar-custom - dihapus karena diganti dengan styling navbar yang baru */
-        .hero-section {
-            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://via.placeholder.com/1500x500/28a745/ffffff?text=Smart+Farm+Background') no-repeat center center;
-            background-size: cover;
-            color: white;
-            padding: 100px 0;
-            text-align: center;
-            margin-bottom: 50px;
-        }
-        .hero-section h1 {
-            font-size: 3.5em;
-            font-weight: 700;
-            margin-bottom: 20px;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
-        }
-        .hero-section p {
-            font-size: 1.3em;
-            margin-bottom: 30px;
-            max-width: 800px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-        .btn-hero {
-            background-color: var(--bs-orange);
-            color: white;
-            border: none;
-            padding: 12px 30px;
-            font-size: 1.1em;
-            border-radius: 50px;
-            transition: background-color 0.3s ease;
-        }
-        .btn-hero:hover {
-            background-color: #e66a00;
-            color: white;
-        }
-        .section-title {
-            text-align: center;
-            margin-bottom: 40px;
-            font-weight: 600;
-            color: var(--bs-primary);
-        }
-        .feature-card {
-            background-color: white;
-            border-radius: 12px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-            padding: 30px;
-            text-align: center;
-            transition: transform 0.3s ease;
-            height: 100%; 
-        }
-        .feature-card:hover {
-            transform: translateY(-10px);
-        }
-        .feature-card .icon {
-            font-size: 3em;
-            color: var(--bs-primary);
-            margin-bottom: 20px;
-        }
-        .product-card {
-            background-color: white;
-            border-radius: 12px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
-            overflow: hidden;
-            transition: transform 0.3s ease;
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-        }
-        .product-card:hover {
-            transform: translateY(-5px);
-        }
-        .product-card img {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-            border-top-left-radius: 12px;
-            border-top-right-radius: 12px;
-        }
-        .product-card .card-body {
-            padding: 20px;
-            flex-grow: 1;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-        }
-        .product-card .card-title {
-            font-size: 1.25em;
-            font-weight: 600;
-            color: #333;
-            margin-bottom: 10px;
-        }
-        .product-card .card-text {
-            color: #666;
-            flex-grow: 1;
-        }
-        .product-card .price {
-            font-size: 1.4em;
-            font-weight: 700;
-            color: var(--bs-orange);
-            margin-top: 15px;
-        }
-        .footer-custom {
-            background-color: #343a40; 
-            color: white;
-            padding: 40px 0;
-            margin-top: 50px;
-        }
-        .footer-custom a {
-            color: white;
-            text-decoration: none;
-        }
-        .footer-custom a:hover {
-            color: var(--bs-primary);
-        }
-    </style>
+    <!-- CSS -->
+    <link rel="stylesheet" href="./src/style/style.css">
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
-        <div class="container">
-            <a class="navbar-brand fadeInDown" href="#">
-                <i class="fas fa-leaf me-2"></i>Smart<span>Farm</span>
-            </a>
+<nav class="navbar navbar-expand-lg navbar-light fixed-top">
+    <div class="container">
+        <a class="navbar-brand fadeInDown" href="index.html">
+            <i class="fas fa-leaf me-2"></i>Smart<span>Farm</span>
+        </a>
+        
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto">
+                <li class="nav-item fadeInDown" style="animation-delay: 0.2s;">
+                    <a class="nav-link" href="index.html"><i class="fas fa-home me-1"></i>Beranda</a>
+                </li>
+                <li class="nav-item fadeInDown" style="animation-delay: 0.3s;">
+                    <a class="nav-link" href="#features"><i class="fas fa-lightbulb me-1"></i>Fitur</a>
+                </li>
+                <li class="nav-item fadeInDown" style="animation-delay: 0.4s;">
+                    <a class="nav-link" href="./pages/produk.html"><i class="fas fa-box-open me-1"></i>Produk</a>
+                </li>
+                <li class="nav-item fadeInDown" style="animation-delay: 0.5s;">
+                    <a class="nav-link" href="./admin/manajemen-produk.html"><i class="fas fa-cogs me-1"></i>Manajemen Produk</a>
+                </li>
+                <li class="nav-item fadeInDown" style="animation-delay: 0.6s;">
+                    <a class="nav-link" href="#contact"><i class="fas fa-envelope me-1"></i>Kontak</a>
+                </li>
+            </ul>
             
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
+            <form class="d-flex search-form fadeInDown" style="animation-delay: 0.7s;">
+                <input class="form-control me-2" type="search" placeholder="Cari produk..." aria-label="Search">
+                <button class="btn search-btn" type="submit">
+                    <i class="fas fa-search"></i>
+                </button>
+            </form>
             
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto">
-                    <li class="nav-item fadeInDown" style="animation-delay: 0.2s;">
-                        <a class="nav-link" href="#"><i class="fas fa-home me-1"></i>Beranda</a>
-                    </li>
-                    <li class="nav-item fadeInDown" style="animation-delay: 0.3s;">
-                        <a class="nav-link" href="#features"><i class="fas fa-lightbulb me-1"></i>Fitur</a>
-                    </li>
-                    <li class="nav-item fadeInDown" style="animation-delay: 0.4s;">
-                        <a class="nav-link" href="#products"><i class="fas fa-box-open me-1"></i>Produk</a>
-                    </li>
-                    <li class="nav-item fadeInDown" style="animation-delay: 0.5s;">
-                        <a class="nav-link" href="manajemen-produk.html"><i class="fas fa-cogs me-1"></i>Manajemen Produk</a>
-                    </li>
-                    <li class="nav-item fadeInDown" style="animation-delay: 0.6s;">
-                        <a class="nav-link" href="#contact"><i class="fas fa-envelope me-1"></i>Kontak</a>
-                    </li>
-                </ul>
-                
-                <form class="d-flex search-form fadeInDown" style="animation-delay: 0.7s;">
-                    <input class="form-control me-2" type="search" placeholder="Cari produk..." aria-label="Search">
-                    <button class="btn search-btn" type="submit">
-                        <i class="fas fa-search"></i>
-                    </button>
-                </form>
-                
-                <div class="fadeInDown" style="animation-delay: 0.8s;">
-                    <a href="#" class="cart-icon">
-                        <i class="fas fa-shopping-cart"></i>
-                        <span class="cart-count">3</span>
-                    </a>
-                </div>
+            <div class="fadeInDown" style="animation-delay: 0.8s;">
+                <a href="#" class="cart-icon me-4"> <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-count">0</span>
+                </a>
             </div>
+
+<div class="d-flex align-items-center fadeInDown" style="animation-delay: 0.9s;">
+    <a href="login.php" class="btn btn-outline-success btn-sm me-1"><i class="fas fa-sign-in-alt me-1"></i> Login</a>
+    <a href="register.php" class="btn btn-success btn-sm"><i class="fas fa-user-plus me-1"></i> Register</a>
+</div>
         </div>
-    </nav>
+    </div>
+</nav>
+
     
-    <section class="hero-section">
+<section class="hero-section">
+        <video autoplay loop muted playsinline poster="https://cdn.creazilla.com/videos/7942048/harvester-tractor-in-field-harvests-tractor-video-lg.mp4">
+            <source src="https://cdn.pixabay.com/video/2023/10/13/184808-874264370_large.mp4" type="video/mp4">
+            Browser Anda tidak mendukung tag video.
+        </video>
         <div class="container">
             <h1>Masa Depan Pertanian Ada di Tangan Anda</h1>
             <p>Smart Farm menyediakan solusi inovatif untuk meningkatkan produktivitas, efisiensi, dan keberlanjutan pertanian melalui teknologi modern.</p>
@@ -482,7 +112,7 @@
                         <h5 class="card-title">Sensor Tanah Cerdas</h5>
                         <p class="card-text">Memantau kelembaban, pH, dan nutrisi tanah secara real-time untuk keputusan irigasi yang tepat.</p>
                         <div class="price">Rp 750.000</div>
-                        <a href="#" class="btn btn-primary btn-sm btn-green mt-3"><i class="fas fa-shopping-cart me-1"></i> Beli Sekarang</a>
+                        <a href="#" class="btn btn-primary btn-sm btn-green mt-3"><i class="fas fa-shopping-cart me-4"></i> Beli Sekarang</a>
                     </div>
                 </div>
             </div>
@@ -515,67 +145,47 @@
         <div class="p-5 bg-white rounded-3 shadow-sm">
             <h2 class="section-title mb-4">Siap Mengubah Pertanian Anda?</h2>
             <p class="lead">Bergabunglah dengan revolusi pertanian cerdas bersama Smart Farm!</p>
-            <a href="manajemen-produk.html" class="btn btn-hero btn-lg"><i class="fas fa-hand-point-right me-2"></i> Mulai Sekarang</a>
+            <a href="./admin/manajemen-produk.html" class="btn btn-hero btn-lg"><i class="fas fa-hand-point-right me-2"></i> Mulai Sekarang</a>
         </div>
     </section>
 
-    <footer id="contact" class="footer-custom">
-        <div class="container text-center">
-            <div class="row">
-                <div class="col-md-4 mb-3 mb-md-0">
-                    <h5>Smart Farm</h5>
-                    <p class="text-muted">Solusi terdepan untuk pertanian masa depan.</p>
-                </div>
-                <div class="col-md-4 mb-3 mb-md-0">
-                    <h5>Tautan Cepat</h5>
-                    <ul class="list-unstyled">
-                        <li><a href="#">Home</a></li>
-                        <li><a href="#features">Fitur Kami</a></li>
-                        <li><a href="#products">Produk</a></li>
-                        <li><a href="manajemen-produk.html">Manajemen Produk</a></li>
-                    </ul>
-                </div>
-                <div class="col-md-4">
-                    <h5>Kontak Kami</h5>
-                    <p><i class="fas fa-map-marker-alt me-2"></i>Universitas Dinamika, Surabaya</p>
-                    <p><i class="fas fa-envelope me-2"></i>info@smartfarm.com</p>
-                    <p><i class="fas fa-phone-alt me-2"></i>+62 812-3456-7890</p>
-                    <div>
-                        <a href="#" class="text-white me-3"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" class="text-white me-3"><i class="fab fa-twitter"></i></a>
-                        <a href="#" class="text-white"><i class="fab fa-instagram"></i></a>
-                    </div>
+<footer class="footer-custom">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <h4>Tentang Kami</h4>
+                <p>Kami adalah penyedia solusi pertanian cerdas yang berkomitmen untuk meningkatkan produktivitas dan keberlanjutan pertanian.</p>
+            </div>
+            <div class="col-md-4">
+                <h4>Link Penting</h4>
+                <ul class="list-unstyled">
+                    <li><a href="#">Beranda</a></li>
+                    <li><a href="#">Produk</a></li>
+                    <li><a href="#">Layanan</a></li>
+                    <li><a href="#">Kontak</a></li>
+                </ul>
+            </div>
+            <div class="col-md-4">
+                <h4>Ikuti Kami</h4>
+                <div class="social-icons">
+                    <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
                 </div>
             </div>
-            <hr class="my-4">
-            <p class="mb-0">&copy; <span id="year"></span> Smart Farm. All rights reserved.</p>
         </div>
-    </footer>
+        <div class="text-center mt-4">
+            <p>&copy; 2023 Smart Farm. All rights reserved.</p>
+        </div>
+    </div>
+</footer>
 
+<!-- BOOTSTRAP SCRIPT -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    
-    <script>
-        // Animasi Navbar saat scroll
-        $(window).scroll(function() {
-            if ($(this).scrollTop() > 50) {
-                $('.navbar').addClass('scrolled');
-            } else {
-                $('.navbar').removeClass('scrolled');
-            }
-        });
-        
-        // Animasi saat search bar di focus
-        $('.form-control').focus(function() {
-            $(this).css('width', '250px');
-        }).blur(function() {
-            if ($(window).width() > 991) {
-                $(this).css('width', '200px');
-            }
-        });
 
-        // Set tahun saat ini untuk footer
-        document.getElementById('year').textContent = new Date().getFullYear();
-    </script>
+    <!-- JS -->
+     <script src="./src/js/script.js"></script>
 </body>
 </html>
