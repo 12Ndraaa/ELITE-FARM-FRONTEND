@@ -145,6 +145,20 @@
         .product-filters {
             margin-bottom: 40px;
         }
+
+        .btn-detail {
+            background-color: #17a2b8; /* Light blue */
+            border-color: #17a2b8;
+            color: white;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            font-weight: 500;
+            border-radius: 0.5rem;
+        }
+        .btn-detail:hover {
+            background-color: #138496;
+            border-color: #117a8b;
+            transform: translateY(-2px);
+        }
     </style>
 </head>
 <body>
@@ -222,7 +236,7 @@
         </div>
 
 
-        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 row-cols-xl-4 g-4 product-grid-scroll" id="productList">
+<div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 row-cols-xl-4 g-4 product-grid-scroll" id="productList">
             <div class="col product-item" data-name="Sensor Tanah Cerdas IoT" data-category="sensor">
                 <div class="product-card">
                     <img src="https://via.placeholder.com/400x200/28a745/ffffff?text=Sensor+Tanah+A" alt="Sensor Tanah Cerdas IoT">
@@ -233,7 +247,13 @@
                         </div>
                         <div class="mt-auto">
                             <div class="price">Rp 750.000</div>
-                            <a href="#" class="btn btn-primary btn-sm btn-green"><i class="fas fa-shopping-cart me-1"></i> Beli Sekarang</a>
+                            <div class="d-flex justify-content-between mt-3">
+                                <a href="detail-produk-1.html" class="btn btn-detail flex-grow-1 me-2"> <i class="fas fa-info-circle me-1"></i> Detail
+                                </a>
+                                <button class="btn btn-primary btn-sm btn-green flex-grow-1 btn-add-to-cart" data-product-id="1" data-product-name="Sensor Tanah Cerdas IoT">
+                                    <i class="fas fa-shopping-cart me-1"></i> Tambah
+                                </button>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -248,7 +268,14 @@
                         </div>
                         <div class="mt-auto">
                             <div class="price">Rp 2.500.000</div>
-                            <a href="#" class="btn btn-primary btn-sm btn-green"><i class="fas fa-shopping-cart me-1"></i> Beli Sekarang</a>
+                            <div class="d-flex justify-content-between mt-3">
+                                <a href="detail-produk-2.html" class="btn btn-detail flex-grow-1 me-2">
+                                    <i class="fas fa-info-circle me-1"></i> Detail
+                                </a>
+                                <button class="btn btn-primary btn-sm btn-green flex-grow-1 btn-add-to-cart" data-product-id="2" data-product-name="Sistem Irigasi Otomatis">
+                                    <i class="fas fa-shopping-cart me-1"></i> Tambah
+                                </button>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -263,7 +290,14 @@
                         </div>
                         <div class="mt-auto">
                             <div class="price">Rp 15.000.000</div>
-                            <a href="#" class="btn btn-primary btn-sm btn-green"><i class="fas fa-shopping-cart me-1"></i> Beli Sekarang</a>
+                            <div class="d-flex justify-content-between mt-3">
+                                <a href="detail-produk-3.html" class="btn btn-detail flex-grow-1 me-2">
+                                    <i class="fas fa-info-circle me-1"></i> Detail
+                                </a>
+                                <button class="btn btn-primary btn-sm btn-green flex-grow-1 btn-add-to-cart" data-product-id="3" data-product-name="Drone Pemantau Pertanian AI">
+                                    <i class="fas fa-shopping-cart me-1"></i> Tambah
+                                </button>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -278,7 +312,14 @@
                         </div>
                         <div class="mt-auto">
                             <div class="price">Rp 3.200.000</div>
-                            <a href="#" class="btn btn-primary btn-sm btn-green"><i class="fas fa-shopping-cart me-1"></i> Beli Sekarang</a>
+                            <div class="d-flex justify-content-between mt-3">
+                                <a href="detail-produk-4.html" class="btn btn-detail flex-grow-1 me-2">
+                                    <i class="fas fa-info-circle me-1"></i> Detail
+                                </a>
+                                <button class="btn btn-primary btn-sm btn-green flex-grow-1 btn-add-to-cart" data-product-id="4" data-product-name="Pompa Air Tenaga Surya 500W">
+                                    <i class="fas fa-shopping-cart me-1"></i> Tambah
+                                </button>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -293,7 +334,14 @@
                         </div>
                         <div class="mt-auto">
                             <div class="price">Rp 900.000</div>
-                            <a href="#" class="btn btn-primary btn-sm btn-green"><i class="fas fa-shopping-cart me-1"></i> Beli Sekarang</a>
+                            <div class="d-flex justify-content-between mt-3">
+                                <a href="detail-produk-5.html" class="btn btn-detail flex-grow-1 me-2">
+                                    <i class="fas fa-info-circle me-1"></i> Detail
+                                </a>
+                                <button class="btn btn-primary btn-sm btn-green flex-grow-1 btn-add-to-cart" data-product-id="5" data-product-name="Alat Uji Tanah Digital Multifungsi">
+                                    <i class="fas fa-shopping-cart me-1"></i> Tambah
+                                </button>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -308,12 +356,19 @@
                         </div>
                         <div class="mt-auto">
                             <div class="price">Rp 1.800.000</div>
-                            <a href="#" class="btn btn-primary btn-sm btn-green"><i class="fas fa-shopping-cart me-1"></i> Beli Sekarang</a>
+                            <div class="d-flex justify-content-between mt-3">
+                                <a href="detail-produk-6.html" class="btn btn-detail flex-grow-1 me-2">
+                                    <i class="fas fa-info-circle me-1"></i> Detail
+                                </a>
+                                <button class="btn btn-primary btn-sm btn-green flex-grow-1 btn-add-to-cart" data-product-id="6" data-product-name="Stasiun Cuaca Otomatis Mini">
+                                    <i class="fas fa-shopping-cart me-1"></i> Tambah
+                                </button>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-             <div class="col product-item" data-name="Sistem Irigasi Tetes Pintar" data-category="irigasi">
+            <div class="col product-item" data-name="Sistem Irigasi Tetes Pintar" data-category="irigasi">
                 <div class="product-card">
                     <img src="https://via.placeholder.com/400x200/28a745/ffffff?text=Irigasi+Tetes+G" alt="Sistem Irigasi Tetes Pintar">
                     <div class="card-body">
@@ -323,7 +378,14 @@
                         </div>
                         <div class="mt-auto">
                             <div class="price">Rp 4.100.000</div>
-                            <a href="#" class="btn btn-primary btn-sm btn-green"><i class="fas fa-shopping-cart me-1"></i> Beli Sekarang</a>
+                            <div class="d-flex justify-content-between mt-3">
+                                <a href="detail-produk-7.html" class="btn btn-detail flex-grow-1 me-2">
+                                    <i class="fas fa-info-circle me-1"></i> Detail
+                                </a>
+                                <button class="btn btn-primary btn-sm btn-green flex-grow-1 btn-add-to-cart" data-product-id="7" data-product-name="Sistem Irigasi Tetes Pintar App-Controlled">
+                                    <i class="fas fa-shopping-cart me-1"></i> Tambah
+                                </button>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -338,7 +400,14 @@
                         </div>
                         <div class="mt-auto">
                             <div class="price">Rp 2.950.000</div>
-                            <a href="#" class="btn btn-primary btn-sm btn-green"><i class="fas fa-shopping-cart me-1"></i> Beli Sekarang</a>
+                            <div class="d-flex justify-content-between mt-3">
+                                <a href="detail-produk-8.html" class="btn btn-detail flex-grow-1 me-2">
+                                    <i class="fas fa-info-circle me-1"></i> Detail
+                                </a>
+                                <button class="btn btn-primary btn-sm btn-green flex-grow-1 btn-add-to-cart" data-product-id="8" data-product-name="Vertical Farm Hydroponic Kit Premium">
+                                    <i class="fas fa-shopping-cart me-1"></i> Tambah
+                                </button>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -353,7 +422,14 @@
                         </div>
                         <div class="mt-auto">
                             <div class="price">Rp 650.000</div>
-                            <a href="#" class="btn btn-primary btn-sm btn-green"><i class="fas fa-shopping-cart me-1"></i> Beli Sekarang</a>
+                            <div class="d-flex justify-content-between mt-3">
+                                <a href="detail-produk-9.html" class="btn btn-detail flex-grow-1 me-2">
+                                    <i class="fas fa-info-circle me-1"></i> Detail
+                                </a>
+                                <button class="btn btn-primary btn-sm btn-green flex-grow-1 btn-add-to-cart" data-product-id="9" data-product-name="Smart Pest Trap Otomatis">
+                                    <i class="fas fa-shopping-cart me-1"></i> Tambah
+                                </button>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -368,12 +444,19 @@
                         </div>
                         <div class="mt-auto">
                             <div class="price">Rp 120.000</div>
-                            <a href="#" class="btn btn-primary btn-sm btn-green"><i class="fas fa-shopping-cart me-1"></i> Beli Sekarang</a>
+                            <div class="d-flex justify-content-between mt-3">
+                                <a href="detail-produk-10.html" class="btn btn-detail flex-grow-1 me-2">
+                                    <i class="fas fa-info-circle me-1"></i> Detail
+                                </a>
+                                <button class="btn btn-primary btn-sm btn-green flex-grow-1 btn-add-to-cart" data-product-id="10" data-product-name="Pupuk Organik Cair SmartGrow">
+                                    <i class="fas fa-shopping-cart me-1"></i> Tambah
+                                </button>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-             <div class="col product-item" data-name="Robot Penanam Bibit Otomatis" data-category="robotik">
+            <div class="col product-item" data-name="Robot Penanam Bibit Otomatis" data-category="robotik">
                 <div class="product-card">
                     <img src="https://via.placeholder.com/400x200/28a745/ffffff?text=Robot+Bibit+K" alt="Robot Penanam Bibit Otomatis">
                     <div class="card-body">
@@ -383,7 +466,14 @@
                         </div>
                         <div class="mt-auto">
                             <div class="price">Rp 25.000.000</div>
-                            <a href="#" class="btn btn-primary btn-sm btn-green"><i class="fas fa-shopping-cart me-1"></i> Beli Sekarang</a>
+                            <div class="d-flex justify-content-between mt-3">
+                                <a href="detail-produk-11.html" class="btn btn-detail flex-grow-1 me-2">
+                                    <i class="fas fa-info-circle me-1"></i> Detail
+                                </a>
+                                <button class="btn btn-primary btn-sm btn-green flex-grow-1 btn-add-to-cart" data-product-id="11" data-product-name="Robot Penanam Bibit Otomatis">
+                                    <i class="fas fa-shopping-cart me-1"></i> Tambah
+                                </button>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -398,7 +488,14 @@
                         </div>
                         <div class="mt-auto">
                             <div class="price">Rp 50.000.000</div>
-                            <a href="#" class="btn btn-primary btn-sm btn-green"><i class="fas fa-shopping-cart me-1"></i> Beli Sekarang</a>
+                            <div class="d-flex justify-content-between mt-3">
+                                <a href="detail-produk-12.html" class="btn btn-detail flex-grow-1 me-2">
+                                    <i class="fas fa-info-circle me-1"></i> Detail
+                                </a>
+                                <button class="btn btn-primary btn-sm btn-green flex-grow-1 btn-add-to-cart" data-product-id="12" data-product-name="Sistem Smart Greenhouse Modular">
+                                    <i class="fas fa-shopping-cart me-1"></i> Tambah
+                                </button>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -413,7 +510,14 @@
                         </div>
                         <div class="mt-auto">
                             <div class="price">Rp 450.000</div>
-                            <a href="#" class="btn btn-primary btn-sm btn-green"><i class="fas fa-shopping-cart me-1"></i> Beli Sekarang</a>
+                            <div class="d-flex justify-content-between mt-3">
+                                <a href="detail-produk-13.html" class="btn btn-detail flex-grow-1 me-2">
+                                    <i class="fas fa-info-circle me-1"></i> Detail
+                                </a>
+                                <button class="btn btn-primary btn-sm btn-green flex-grow-1 btn-add-to-cart" data-product-id="13" data-product-name="Kit Uji Kesuburan Air Digital">
+                                    <i class="fas fa-shopping-cart me-1"></i> Tambah
+                                </button>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -428,7 +532,14 @@
                         </div>
                         <div class="mt-auto">
                             <div class="price">Rp 300.000</div>
-                            <a href="#" class="btn btn-primary btn-sm btn-green"><i class="fas fa-shopping-cart me-1"></i> Beli Sekarang</a>
+                            <div class="d-flex justify-content-between mt-3">
+                                <a href="detail-produk-14.html" class="btn btn-detail flex-grow-1 me-2">
+                                    <i class="fas fa-info-circle me-1"></i> Detail
+                                </a>
+                                <button class="btn btn-primary btn-sm btn-green flex-grow-1 btn-add-to-cart" data-product-id="14" data-product-name="Sensor Kelembaban Udara Precision">
+                                    <i class="fas fa-shopping-cart me-1"></i> Tambah
+                                </button>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -443,7 +554,14 @@
                         </div>
                         <div class="mt-auto">
                             <div class="price">Rp 80.000/meter</div>
-                            <a href="#" class="btn btn-primary btn-sm btn-green"><i class="fas fa-shopping-cart me-1"></i> Beli Sekarang</a>
+                            <div class="d-flex justify-content-between mt-3">
+                                <a href="detail-produk-15.html" class="btn btn-detail flex-grow-1 me-2">
+                                    <i class="fas fa-info-circle me-1"></i> Detail
+                                </a>
+                                <button class="btn btn-primary btn-sm btn-green flex-grow-1 btn-add-to-cart" data-product-id="15" data-product-name="Jaring Anti Hama UV Proteksi Ganda">
+                                    <i class="fas fa-shopping-cart me-1"></i> Tambah
+                                </button>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -458,12 +576,19 @@
                         </div>
                         <div class="mt-auto">
                             <div class="price">Rp 550.000</div>
-                            <a href="#" class="btn btn-primary btn-sm btn-green"><i class="fas fa-shopping-cart me-1"></i> Beli Sekarang</a>
+                            <div class="d-flex justify-content-between mt-3">
+                                <a href="detail-produk-16.html" class="btn btn-detail flex-grow-1 me-2">
+                                    <i class="fas fa-info-circle me-1"></i> Detail
+                                </a>
+                                <button class="btn btn-primary btn-sm btn-green flex-grow-1 btn-add-to-cart" data-product-id="16" data-product-name="Lampu Tumbuh LED Full Spectrum 100W">
+                                    <i class="fas fa-shopping-cart me-1"></i> Tambah
+                                </button>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
+            </div>
     </div>
 
 

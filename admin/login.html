@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f8f9fa;
+            font-family: 'Poppins', sans-serif;
+        }
+        .login-container {
+            background: linear-gradient(to right, #28a745, #ffc107); /* Latar belakang gradien hijau ke kuning */
+            height: 100vh; /* Mengisi seluruh tinggi viewport */
+            display: flex; /* Menggunakan flexbox untuk centering */
+            justify-content: center; /* Centering horizontal */
+            align-items: center; /* Centering vertikal */
+        }
+        .card {
+            border-radius: 1rem; /* Sudut membulat */
+            border: none; /* Hilangkan border default card */
+        }
+        .card-title {
+            font-weight: 700; /* Font lebih tebal untuk judul */
+            color: #343a40; /* Warna teks gelap */
+        }
+        .btn-primary {
+            background-color: #28a745; /* Warna hijau SmartFarm */
+            border-color: #28a745;
+            font-weight: 600;
+            padding: .75rem 1.25rem;
+            border-radius: .5rem;
+            transition: background-color 0.3s ease, border-color 0.3s ease; /* Transisi halus */
+        }
+        .btn-primary:hover {
+            background-color: #218838; /* Warna hijau sedikit lebih gelap saat hover */
+            border-color: #1e7e34;
+        }
+        a {
+            color: #28a745; /* Warna link hijau */
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline; /* Garis bawah saat hover */
+        }
+    </style>
+</head>
+<body>
+    <div class="container-fluid login-container">
+        <div class="row justify-content-center align-items-center min-vh-100">
+            <div class="col-12 col-md-8 col-lg-5 col-xl-4">
+                <div class="card shadow-lg p-4">
+                    <div class="card-body">
+                        <h3 class="card-title text-center mb-4">Login Akun Anda</h3>
+                        <form action="" method="POST">
+                            <div class="mb-3">
+                                <label for="username" class="form-label">Username</label>
+                                <input type="text" class="form-control" name="username" id="username" placeholder="Masukkan username" required>
+                            </div>
+                            <div class="mb-4">
+                                <label for="password" class="form-label">Password</label>
+                                <input type="password" class="form-control" name="password" id="password" placeholder="Masukkan password" required>
+                            </div>
+                            <div class="form-check mb-3">
+                                <input type="checkbox" class="form-check-input" id="rememberMe" name="remember_me">
+                                <label class="form-check-label" for="rememberMe">Ingat saya</label>
+                            </div>
+                            <button type="submit" name="loginbtn" class="btn btn-primary w-100">Login</button>
+                            <p class="text-center mt-3">Belum punya akun? <a href="./register.php">Daftar sekarang</a></p>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<!-- BOOTSTRAP SCRIPT -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <!-- JS -->
+     <script src="./src/js/script.js"></script>
+</html>

@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Farm - Solusi Pertanian Cerdas</title>
+    <!-- BOOTSTRAP CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- CSS -->
+    <link rel="stylesheet" href="../src/style/style.css">
+    <style>
+        /* src/style/form-kontak.css */
+
+/* Bagian halaman kontak */
+.isi-halaman {
+    padding-top: 100px; /* Sesuaikan dengan tinggi navbar Anda */
+    padding-bottom: 50px;
+}
+
+.bagian-kontak {
+    padding: 60px 0;
+}
+
+.wadah-kontak {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    padding: 40px;
+    text-align: center;
+}
+
+.judul-bagian {
+    font-size: 2.5rem;
+    color: #28a745; /* Hijau SmartFarm */
+    margin-bottom: 15px;
+    font-weight: 700;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.judul-bagian::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    border-radius: 2px;
+}
+
+.deskripsi-bagian {
+    font-size: 1.1rem;
+    color: #555;
+    margin-bottom: 40px;
+    line-height: 1.6;
+}
+
+/* Formulir Kontak */
+.formulir-kontak {
+    text-align: left;
+    margin-bottom: 40px;
+}
+
+.grup-input {
+    margin-bottom: 20px;
+}
+
+.label-input {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #333;
+    font-size: 1rem;
+}
+
+.input-teks,
+.area-teks {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #ced4da;
+    border-radius: 8px;
+    font-size: 1rem;
+    color: #333;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    box-sizing: border-box; /* Penting untuk padding dan border */
+}
+
+.input-teks:focus,
+.area-teks:focus {
+    border-color: #28a745; /* Hijau saat fokus */
+    outline: none;
+    box-shadow: 0 0 0 0.2rem rgba(40, 167, 69, 0.25); /* Efek bayangan saat fokus */
+}
+
+.area-teks {
+    resize: vertical; /* Izinkan user merubah ukuran vertikal */
+    min-height: 120px;
+}
+
+.tombol-kirim {
+    display: block;
+    width: 100%;
+    padding: 15px 25px;
+    background-color: #28a745; /* Hijau tombol kirim */
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.tombol-kirim:hover {
+    background-color: #218838; /* Hijau lebih gelap saat hover */
+    transform: translateY(-2px);
+}
+
+/* Informasi Kontak Langsung */
+.info-kontak {
+    margin-top: 30px;
+    border-top: 1px solid #eee;
+    padding-top: 30px;
+}
+
+.info-kontak h3 {
+    font-size: 1.8rem;
+    color: #007bff; /* Biru */
+    margin-bottom: 20px;
+}
+
+.info-kontak p {
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.info-kontak p i {
+    font-size: 1.2rem;
+    color: #28a745; /* Hijau ikon */
+    margin-right: 10px;
+    width: 25px; /* Lebar tetap untuk ikon agar rata */
+    text-align: center;
+}
+
+/* Responsif */
+@media (max-width: 768px) {
+    .wadah-kontak {
+        padding: 25px;
+        margin: 0 15px;
+    }
+
+    .judul-bagian {
+        font-size: 2rem;
+    }
+
+    .deskripsi-bagian {
+        font-size: 1rem;
+    }
+
+    .input-teks,
+    .area-teks,
+    .tombol-kirim {
+        font-size: 0.95rem;
+        padding: 10px 12px;
+    }
+
+    .tombol-kirim {
+        padding: 12px 20px;
+    }
+
+    .info-kontak h3 {
+        font-size: 1.5rem;
+    }
+}
+    </style>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-light fixed-top">
+    <div class="container">
+        <a class="navbar-brand fadeInDown" href="./index.html">
+            <i class="fas fa-leaf me-2"></i>Smart<span>Farm</span>
+        </a>
+        
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto">
+                <li class="nav-item fadeInDown" style="animation-delay: 0.2s;">
+                    <a class="nav-link" href="./index.html"><i class="fas fa-home me-1"></i>Beranda</a>
+                </li>
+                <li class="nav-item fadeInDown" style="animation-delay: 0.3s;">
+                    <a class="nav-link" href="./index.html#features"><i class="fas fa-lightbulb me-1"></i>Fitur</a>
+                </li>
+                <li class="nav-item fadeInDown" style="animation-delay: 0.4s;">
+                    <a class="nav-link" href="./pages/produk.html"><i class="fas fa-box-open me-1"></i>Produk</a>
+                </li>
+                <li class="nav-item fadeInDown" style="animation-delay: 0.5s;">
+                    <a class="nav-link" href="./admin/manajemen-produk.html"><i class="fas fa-cogs me-1"></i>Manajemen Produk</a>
+                </li>
+                <li class="nav-item fadeInDown" style="animation-delay: 0.6s;">
+                    <a class="nav-link" href="./pages/contact.html"><i class="fas fa-envelope me-1"></i>Kontak</a>
+                </li>
+            </ul>
+            
+            <form class="d-flex search-form fadeInDown" style="animation-delay: 0.7s;">
+                <input class="form-control me-2" type="search" placeholder="Cari produk..." aria-label="Search">
+                <button class="btn search-btn" type="submit">
+                    <i class="fas fa-search"></i>
+                </button>
+            </form>
+            
+            <div class="fadeInDown" style="animation-delay: 0.8s;">
+                <a href="#" class="cart-icon me-4"> <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-count">0</span>
+                </a>
+            </div>
+
+<div class="d-flex align-items-center fadeInDown" style="animation-delay: 0.9s;">
+    <a href="login.php" class="btn btn-outline-success btn-sm me-1"><i class="fas fa-sign-in-alt me-1"></i> Login</a>
+    <a href="register.php" class="btn btn-success btn-sm"><i class="fas fa-user-plus me-1"></i> Register</a>
+</div>
+        </div>
+    </div>
+</nav>
+
+    <main class="isi-halaman">
+        <section class="bagian-kontak">
+            <div class="wadah-kontak">
+                <h2 class="judul-bagian">Hubungi Kami</h2>
+                <p class="deskripsi-bagian">Ada pertanyaan? Ingin bermitra? Jangan ragu untuk menghubungi tim SmartFarm.</p>
+
+                <form action="submit_contact.php" method="POST" class="formulir-kontak">
+                    <div class="grup-input">
+                        <label for="nama_lengkap" class="label-input">Nama Lengkap:</label>
+                        <input type="text" id="nama_lengkap" name="nama_lengkap" class="input-teks" placeholder="Masukkan nama lengkap Anda" required>
+                    </div>
+
+                    <div class="grup-input">
+                        <label for="email_anda" class="label-input">Email:</label>
+                        <input type="email" id="email_anda" name="email_anda" class="input-teks" placeholder="Masukkan alamat email Anda" required>
+                    </div>
+
+                    <div class="grup-input">
+                        <label for="subjek_pesan" class="label-input">Subjek:</label>
+                        <input type="text" id="subjek_pesan" name="subjek_pesan" class="input-teks" placeholder="Subjek pesan Anda" required>
+                    </div>
+
+                    <div class="grup-input">
+                        <label for="pesan_anda" class="label-input">Pesan Anda:</label>
+                        <textarea id="pesan_anda" name="pesan_anda" class="area-teks" rows="6" placeholder="Tulis pesan Anda di sini..." required></textarea>
+                    </div>
+
+                    <button type="submit" class="tombol-kirim">Kirim Pesan</button>
+                </form>
+
+                <div class="info-kontak">
+                    <h3>Informasi Kontak Langsung</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> Alamat: Jl. Pertanian No. 123, Kota Surabaya, Indonesia</p>
+                    <p><i class="fas fa-phone"></i> Telepon: (031) 12345678</p>
+                    <p><i class="fas fa-envelope"></i> Email: info@smartfarm.com</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+<footer class="footer-custom">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <h4>Tentang Kami</h4>
+                <p>Kami adalah penyedia solusi pertanian cerdas yang berkomitmen untuk meningkatkan produktivitas dan keberlanjutan pertanian.</p>
+            </div>
+            <div class="col-md-4">
+                <h4>Link Penting</h4>
+                <ul class="list-unstyled">
+                    <li><a href="#">Beranda</a></li>
+                    <li><a href="#">Produk</a></li>
+                    <li><a href="#">Layanan</a></li>
+                    <li><a href="#">Kontak</a></li>
+                </ul>
+            </div>
+            <div class="col-md-4">
+                <h4>Ikuti Kami</h4>
+                <div class="social-icons">
+                    <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="text-center mt-4">
+            <p>&copy; 2023 Smart Farm. All rights reserved.</p>
+        </div>
+    </div>
+</footer>
+<!-- SCRIPT -->
+ <script>
+    document.getElementById('contactForm').addEventListener('submit', function(event) {
+        event.preventDefault(); // Mencegah pengiriman formulir
+        // Ambil nilai dari input
+        const name = document.getElementById('name').value;
+        const email = document.getElementById('email').value;
+        const message = document.getElementById('message').value;
+        // Tampilkan alert dengan informasi yang diisi
+        alert(`Nama: ${name}\nEmail: ${email}\nPesan: ${message}`);
+        // Reset formulir setelah pengiriman
+        this.reset();
+    });
+</script>
+
+<!-- BOOTSTRAP SCRIPT -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <!-- JS -->
+     <script src="./src/js/script.js"></script>
+</body>
+</html>
